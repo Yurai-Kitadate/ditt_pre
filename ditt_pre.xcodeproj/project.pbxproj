@@ -11,12 +11,21 @@
 		5EE1BD2B282263C0004513A2 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD2A282263C0004513A2 /* Tests_iOSLaunchTests.swift */; };
 		5EE1BD35282263C0004513A2 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD34282263C0004513A2 /* Tests_macOS.swift */; };
 		5EE1BD37282263C0004513A2 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD36282263C0004513A2 /* Tests_macOSLaunchTests.swift */; };
-		5EE1BD38282263C0004513A2 /* ditt_preApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD10282263BE004513A2 /* ditt_preApp.swift */; };
-		5EE1BD39282263C0004513A2 /* ditt_preApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD10282263BE004513A2 /* ditt_preApp.swift */; };
+		5EE1BD38282263C0004513A2 /* Ditt_preApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD10282263BE004513A2 /* Ditt_preApp.swift */; };
+		5EE1BD39282263C0004513A2 /* Ditt_preApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD10282263BE004513A2 /* Ditt_preApp.swift */; };
 		5EE1BD3A282263C0004513A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD11282263BE004513A2 /* ContentView.swift */; };
 		5EE1BD3B282263C0004513A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD11282263BE004513A2 /* ContentView.swift */; };
 		5EE1BD3C282263C0004513A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1BD12282263C0004513A2 /* Assets.xcassets */; };
 		5EE1BD3D282263C0004513A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EE1BD12282263C0004513A2 /* Assets.xcassets */; };
+		5EE1BD4D282269B9004513A2 /* ProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD4C282269B9004513A2 /* ProductsListView.swift */; };
+		5EE1BD4E282269B9004513A2 /* ProductsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD4C282269B9004513A2 /* ProductsListView.swift */; };
+		5EE1BD5028227003004513A2 /* Datamodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD4F28227003004513A2 /* Datamodel.swift */; };
+		5EE1BD5128227003004513A2 /* Datamodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD4F28227003004513A2 /* Datamodel.swift */; };
+		5EE1BD5228227441004513A2 /* Datamodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD4F28227003004513A2 /* Datamodel.swift */; };
+		5EE1BD5528227561004513A2 /* Product+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD5428227561004513A2 /* Product+Mock.swift */; };
+		5EE1BD5628227561004513A2 /* Product+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD5428227561004513A2 /* Product+Mock.swift */; };
+		5EE1BD5B282282CD004513A2 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD5A282282CD004513A2 /* ProductDetailView.swift */; };
+		5EE1BD5C282282CD004513A2 /* ProductDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1BD5A282282CD004513A2 /* ProductDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5EE1BD10282263BE004513A2 /* ditt_preApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ditt_preApp.swift; sourceTree = "<group>"; };
+		5EE1BD10282263BE004513A2 /* Ditt_preApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ditt_preApp.swift; sourceTree = "<group>"; };
 		5EE1BD11282263BE004513A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5EE1BD12282263C0004513A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5EE1BD17282263C0004513A2 /* ditt_pre.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ditt_pre.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +58,10 @@
 		5EE1BD30282263C0004513A2 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EE1BD34282263C0004513A2 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
 		5EE1BD36282263C0004513A2 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		5EE1BD4C282269B9004513A2 /* ProductsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsListView.swift; sourceTree = "<group>"; };
+		5EE1BD4F28227003004513A2 /* Datamodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datamodel.swift; sourceTree = "<group>"; };
+		5EE1BD5428227561004513A2 /* Product+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product+Mock.swift"; sourceTree = "<group>"; };
+		5EE1BD5A282282CD004513A2 /* ProductDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +110,10 @@
 		5EE1BD0F282263BE004513A2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				5EE1BD10282263BE004513A2 /* ditt_preApp.swift */,
-				5EE1BD11282263BE004513A2 /* ContentView.swift */,
+				5EE1BD5328227539004513A2 /* Mocks */,
+				5EE1BD10282263BE004513A2 /* Ditt_preApp.swift */,
+				5EE1BD4F28227003004513A2 /* Datamodel.swift */,
+				5EE1BD5D282282D7004513A2 /* View */,
 				5EE1BD12282263C0004513A2 /* Assets.xcassets */,
 			);
 			path = Shared;
@@ -139,6 +154,24 @@
 				5EE1BD36282263C0004513A2 /* Tests_macOSLaunchTests.swift */,
 			);
 			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		5EE1BD5328227539004513A2 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1BD5428227561004513A2 /* Product+Mock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		5EE1BD5D282282D7004513A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1BD11282263BE004513A2 /* ContentView.swift */,
+				5EE1BD4C282269B9004513A2 /* ProductsListView.swift */,
+				5EE1BD5A282282CD004513A2 /* ProductDetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE1BD5528227561004513A2 /* Product+Mock.swift in Sources */,
+				5EE1BD5B282282CD004513A2 /* ProductDetailView.swift in Sources */,
 				5EE1BD3A282263C0004513A2 /* ContentView.swift in Sources */,
-				5EE1BD38282263C0004513A2 /* ditt_preApp.swift in Sources */,
+				5EE1BD5028227003004513A2 /* Datamodel.swift in Sources */,
+				5EE1BD4D282269B9004513A2 /* ProductsListView.swift in Sources */,
+				5EE1BD38282263C0004513A2 /* Ditt_preApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,8 +345,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE1BD5628227561004513A2 /* Product+Mock.swift in Sources */,
+				5EE1BD5C282282CD004513A2 /* ProductDetailView.swift in Sources */,
 				5EE1BD3B282263C0004513A2 /* ContentView.swift in Sources */,
-				5EE1BD39282263C0004513A2 /* ditt_preApp.swift in Sources */,
+				5EE1BD5128227003004513A2 /* Datamodel.swift in Sources */,
+				5EE1BD4E282269B9004513A2 /* ProductsListView.swift in Sources */,
+				5EE1BD39282263C0004513A2 /* Ditt_preApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EE1BD5228227441004513A2 /* Datamodel.swift in Sources */,
 				5EE1BD2B282263C0004513A2 /* Tests_iOSLaunchTests.swift in Sources */,
 				5EE1BD29282263C0004513A2 /* Tests_iOS.swift in Sources */,
 			);
