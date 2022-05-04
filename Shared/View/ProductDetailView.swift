@@ -8,8 +8,10 @@
 import Foundation
 import SwiftUI
 struct ProductDetailView:View{
+    @State var image: UIImage?
     let product : Product
     var body:some View{
+        
         HStack{
             VStack(alignment: .leading){
                 HStack(alignment: .bottom){
@@ -17,7 +19,9 @@ struct ProductDetailView:View{
                     Text(product.teamSection).font(.caption)
                 }
                 Divider()
-                Text(product.thumbnailURL)
+                URLImage(url: product.thumbnailURL)
+                                .aspectRatio(contentMode: .fit)
+                Text("Introduction").font(.body)
                 Text(product.introduction)
                 Text(product.ideaSection)
                 Text(product.designSection)
@@ -26,5 +30,18 @@ struct ProductDetailView:View{
             }
             Spacer()
         }.padding()
+    }
+    func downloadImageAsync(url: URL, completion: @escaping (UIImage?) -> Void) {
+        let session = URLSession(configuration: .default)
+        let task = session.dataTask(with: url) { (data, _, _) in
+            var image: UIImage?
+            if let imageData = data {
+                image = UIImage(data: imageData)
+            }
+            DispatchQueue.main.async {
+                completion(image)
+            }
+        }
+        task.resume()
     }
 }
