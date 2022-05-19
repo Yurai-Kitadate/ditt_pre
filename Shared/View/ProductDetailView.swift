@@ -11,6 +11,7 @@ struct ProductDetailView:View{
     @State var image: UIImage?
     let product : Product
     var body:some View{
+        
         HStack{
             VStack(alignment: .leading){
                 HStack(alignment: .bottom){

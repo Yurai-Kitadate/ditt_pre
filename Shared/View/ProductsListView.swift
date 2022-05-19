@@ -8,28 +8,35 @@
 import Foundation
 import SwiftUI
 struct ProductsListView: View {
-    private let mockProducts: [Product] = [
+    
+    let mockProducts: [Product] = [
         .mock1, .mock2, .mock3
     ]
+    
     var body: some View {
-        NavigationView{
-            List(mockProducts) { product in
-                NavigationLink(destination:ProductDetailView(
-                    product : product
-                )){
-                    VStack{
-                        HStack{
-                            Text(product.title).font(.title)
-                            Spacer()
-                        }
-                        HStack{
-                            Text(product.introduction).font(.caption).foregroundColor(Color.gray)
-                            Spacer()
-                            Text(product.teamSection).font(.body)
+        VStack(){
+            HStack{
+                Image("logo")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 100, height: 100)
+                Spacer()
+            }
+            ScrollView(showsIndicators:false){
+                //ScrollView {
+                //NavigationView{
+                VStack(alignment: .leading,spacing: 15) {
+                    ForEach((0...2), id: \.self) { i in
+                        
+                        NavigationLink(destination:ProductDetailView(product: mockProducts[i])){
+                            ProductCardView(product: mockProducts[i])
                         }
                     }
                 }
+                //}
             }
-        }.navigationBarBackButtonHidden(true)
+            .navigationBarBackButtonHidden(true)
+            //}
+        }
     }
 }
