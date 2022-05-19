@@ -14,29 +14,46 @@ struct ProductsListView: View {
     ]
     
     var body: some View {
-        VStack(){
-            HStack{
-                Image("logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 100, height: 100)
-                Spacer()
-            }
-            ScrollView(showsIndicators:false){
-                //ScrollView {
-                //NavigationView{
-                VStack(alignment: .leading,spacing: 15) {
-                    ForEach((0...2), id: \.self) { i in
-                        
-                        NavigationLink(destination:ProductDetailView(product: mockProducts[i])){
-                            ProductCardView(product: mockProducts[i])
+        ZStack{
+//            Color.yellow
+//                             .ignoresSafeArea()
+            
+            VStack(){
+                VStack {
+                    Rectangle()
+                        .foregroundColor(.blue)
+                        .shadow(color: .gray, radius: 3, x: 5, y: 5)
+                        .frame(width:400, height: 0)
+                }
+                HStack{
+                    Image("logo")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 100, height: 100)
+                    Spacer()
+                }
+                Divider()
+                ScrollView(showsIndicators:false){
+                    //ScrollView {
+                    //NavigationView{
+                    VStack(alignment: .center,spacing: 15) {
+                        ForEach((0...2), id: \.self) { i in
+                            if i == 0{
+                                Rectangle()
+                                    .foregroundColor(.blue)
+                                    .shadow(color: .gray, radius: 3, x: 5, y: 5)
+                                    .frame(width:400, height: 0)
+                            }
+                            NavigationLink(destination:ProductDetailView(product: mockProducts[i])){
+                                ProductCardView(product: mockProducts[i])
+                            }
                         }
                     }
+                    //}
                 }
+                .navigationBarBackButtonHidden(true)
                 //}
             }
-            .navigationBarBackButtonHidden(true)
-            //}
         }
     }
 }
