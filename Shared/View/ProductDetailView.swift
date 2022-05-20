@@ -1,10 +1,3 @@
-//
-//  ProductDetailView.swift
-//  ditt_pre
-//
-//  Created by yurai on 2022/05/04.
-//
-
 import Foundation
 import SwiftUI
 struct ProductDetailView:View{
@@ -22,7 +15,7 @@ struct ProductDetailView:View{
                 URLImage(url: product.thumbnailURL)
                     .cornerRadius(20)
                     .shadow(color: .gray, radius: 3, x: 5, y: 5)
-                    .frame(width:350, height: 300)
+                    .frame(width:350, height: 350)
                 Text("Introduction").font(.body)
                 Text(product.introduction)
                 Text(product.ideaSection)

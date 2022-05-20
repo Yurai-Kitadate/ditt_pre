@@ -1,13 +1,4 @@
 import SwiftUI
-//struct ItemDetailView: View {
-//    var body: some View {
-//        ScrollView(.vertical, showsIndicators: false) {
-//            VStack(alignment: .center, spacing: 0) {
-//                ItemMainView()
-//            }
-//        }
-//    }
-//}
 struct ProductCardView: View {
     let product : Product
     var body: some View {
@@ -16,15 +7,17 @@ struct ProductCardView: View {
                 .fill(Color.white)
                 .cornerRadius(20)
                 .shadow(color: .gray, radius: 3, x: 5, y: 5)
-                .frame(width:350, height: 300)
+                .frame(width:350, height: 350)
                 
-            VStack(){
+            VStack(alignment: .leading){
                 URLImage(url:product.thumbnailURL)
                 //.resizable()
                     .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
                     //.shadow(color: .gray, radius: 3, x: 5, y: 5)
-                    .frame(width:350, height: 235)
-                
+                    .frame(width:350, height: 250)
+                Text("  " + product.title).foregroundColor(.black)
+                Text("")
+                Text("  " + product.introduction).foregroundColor(.gray).font(.caption)
             }
         }
     }

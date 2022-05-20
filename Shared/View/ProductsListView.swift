@@ -1,10 +1,3 @@
-//
-//  ProductsRowView.swift
-//  ditt_pre
-//
-//  Created by yurai on 2022/05/04.
-//
-
 import Foundation
 import SwiftUI
 struct ProductsListView: View {
