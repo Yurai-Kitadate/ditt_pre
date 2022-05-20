@@ -15,6 +15,7 @@ struct ProductCardView: View {
                     .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
                     //.shadow(color: .gray, radius: 3, x: 5, y: 5)
                     .frame(width:350, height: 250)
+                //ここスペース使わずちゃんとpaddingとかでどうにかする
                 Text("  " + product.title).foregroundColor(.black)
                 Text("")
                 Text("  " + product.introduction).foregroundColor(.gray).font(.caption)

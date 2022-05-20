@@ -41,6 +41,7 @@ struct ProductsListView: View {
                     }
                 }
                 .navigationBarBackButtonHidden(true)
+                .navigationBarHidden(true)
             }
         }
     }

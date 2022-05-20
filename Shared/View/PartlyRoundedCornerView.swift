@@ -1,3 +1,5 @@
+// https://github.com/chocoyama/PartlyRoundedCornerView
+// ↑お借りしている
 import SwiftUI
 struct PartlyRoundedCornerView: UIViewRepresentable {
     let cornerRadius: CGFloat

@@ -8,19 +8,15 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var selection : Int = 0
+    init() {
+        UITabBar.appearance().backgroundColor = .white
+        UITabBar.appearance().unselectedItemTintColor = .gray
+    }
     var body: some View {
-        TabView {
-            ProductsListView()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                }
-            Text("a")
-                .tabItem {
-                    Image(systemName: "person.fill")
-                }
-            
-            
-        }
+        
+        ProductsListView()
+        
     }
 }
 
