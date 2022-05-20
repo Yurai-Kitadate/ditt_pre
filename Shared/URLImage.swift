@@ -18,8 +18,7 @@ struct URLImage: View {
             }
         } else {
             return VStack {
-                Image(uiImage: UIImage(systemName: "icloud.and.arrow.down")!)
-                //UIActivityIndicatorView(style: style)
+                Image("no_image").resizable()
             }
         }
     }

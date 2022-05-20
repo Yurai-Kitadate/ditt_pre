@@ -20,7 +20,9 @@ struct ProductDetailView:View{
                 }
                 Divider()
                 URLImage(url: product.thumbnailURL)
-                                .aspectRatio(contentMode: .fit)
+                    .cornerRadius(20)
+                    .shadow(color: .gray, radius: 3, x: 5, y: 5)
+                    .frame(width:350, height: 300)
                 Text("Introduction").font(.body)
                 Text(product.introduction)
                 Text(product.ideaSection)

@@ -15,9 +15,8 @@ struct ProductsListView: View {
     
     var body: some View {
         ZStack{
-//            Color.yellow
-//                             .ignoresSafeArea()
-            
+            Color(red: 1, green: 0.905, blue: 1.0)
+                             .ignoresSafeArea()
             VStack(){
                 VStack {
                     Rectangle()
@@ -26,7 +25,7 @@ struct ProductsListView: View {
                         .frame(width:400, height: 0)
                 }
                 HStack{
-                    Image("logo")
+                    Image("Logo1")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 100, height: 100)
@@ -34,8 +33,6 @@ struct ProductsListView: View {
                 }
                 Divider()
                 ScrollView(showsIndicators:false){
-                    //ScrollView {
-                    //NavigationView{
                     VStack(alignment: .center,spacing: 15) {
                         ForEach((0...2), id: \.self) { i in
                             if i == 0{
@@ -49,10 +46,8 @@ struct ProductsListView: View {
                             }
                         }
                     }
-                    //}
                 }
                 .navigationBarBackButtonHidden(true)
-                //}
             }
         }
     }
