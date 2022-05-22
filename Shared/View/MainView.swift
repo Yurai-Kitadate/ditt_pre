@@ -15,7 +15,7 @@ struct MainView: View {
     }
     var body: some View {
         
-        ProductsListView()
+       ProductsListView()
         
     }
 }

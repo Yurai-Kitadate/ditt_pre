@@ -10,7 +10,7 @@ struct ProductCardView: View {
                 .frame(width:350, height: 350)
                 
             VStack(alignment: .leading){
-                URLImage(url:product.thumbnailURL)
+                URLImage(url:product.thumbnailUrl)
                 //.resizable()
                     .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
                     //.shadow(color: .gray, radius: 3, x: 5, y: 5)

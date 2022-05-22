@@ -11,7 +11,7 @@ import SwiftUI
 struct Ditt_preApp: App {
     var body: some Scene {
         WindowGroup {
-            TitleView()
+            MainView()
         }
     }
 }
