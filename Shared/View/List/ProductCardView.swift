@@ -9,14 +9,15 @@ struct ProductCardView: View {
                 .shadow(color: .gray, radius: 3, x: 5, y: 5)
                 .frame(width:350, height: 350)
                 
-            VStack{
+            VStack(alignment: .center){
                 URLImage(url:product.thumbnailUrl)
                     .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
                     .frame(width:350, height: 250)
-                //ここスペース使わずちゃんとpaddingとかでどうにかする
-                Text("  " + product.title).foregroundColor(.black)
+                Text(product.title).foregroundColor(.black)
                 Text("")
-                Text("  " + product.introduction).foregroundColor(.gray).font(.caption)
+                Text(product.introduction).foregroundColor(.gray).font(.custom("caption", size: 10)).multilineTextAlignment(.leading)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: false).frame(width:330)
             }
         }
     }
