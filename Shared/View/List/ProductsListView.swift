@@ -34,7 +34,7 @@ struct ProductsListView: View {
                     Rectangle()
                         .foregroundColor(.blue)
                         .shadow(color: .gray, radius: 3, x: 5, y: 5)
-                        .frame(width:400, height: 0)
+                        .frame(width:500, height: 0)
                 }
                 HStack{
                     Image("Logo1")
@@ -49,7 +49,7 @@ struct ProductsListView: View {
                         Rectangle()
                             .foregroundColor(.blue)
                             .shadow(color: .gray, radius: 3, x: 5, y: 5)
-                            .frame(width:400, height: 0)
+                            .frame(width:500, height: 0)
                         if productsStore.products.isEmpty {
                             ZStack(alignment: .center){
                             Rectangle()

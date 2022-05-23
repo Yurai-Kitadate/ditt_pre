@@ -16,7 +16,7 @@ struct EachSectionCardView: View {
                 .fill(Color.white)
                 .cornerRadius(20)
                 .shadow(color: .gray, radius: 3, x: 5, y: 5)
-                .frame(width:350)
+                .frame(width:375)
             HStack{
                 VStack(alignment: .leading,spacing: 20){
                     CategoryTitleView(sectionType: sectionType)
