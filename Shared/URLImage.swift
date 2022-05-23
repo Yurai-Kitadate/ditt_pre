@@ -14,11 +14,20 @@ struct URLImage: View {
         if let imageData = self.imageDownloader.downloadData {
             let img = UIImage(data: imageData)
             return VStack {
-                Image(uiImage: img!).resizable()
+                Image(uiImage: img!)
+                    .resizable()
+                    .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
+                    .frame(width:375, height: 250)
+                    .aspectRatio(contentMode: .fit)
+
             }
         } else {
             return VStack {
-                Image(uiImage: UIImage(systemName: "icloud.and.arrow.down")!).resizable()
+                Image("no_image")
+                    .resizable()
+                    .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
+                    .frame(width:375, height: 250)
+                    .aspectRatio(contentMode: .fit)
             }
         }
     }
