@@ -25,10 +25,6 @@ class ProductDetailStore: ObservableObject {
 }
 struct ProductDetailView:View{
     @StateObject private var productDetailStore = ProductDetailStore()
-    
-    //    init(){
-    //        _productDetailStore = StateObject(wrappedValue: ProductDetailStore())
-    //    }
     @State var image: UIImage?
     let id: String
     //let product : Product_Detail
