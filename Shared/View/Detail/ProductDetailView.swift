@@ -39,7 +39,7 @@ struct ProductDetailView:View{
             ScrollView{
                 VStack(spacing: 20){
                     if productDetailStore.product_detail.id == ""{
-                        Text("a")
+                        ProgressView("now loding")
                     }else{
                         ProductCardView(product: Product(id: productDetailStore.product_detail.id, thumbnailUrl: productDetailStore.product_detail.thumbnailUrl, title: productDetailStore.product_detail.title, introduction: productDetailStore.product_detail.introduction, createdAt: productDetailStore.product_detail.createdAt, updatedAt:productDetailStore.product_detail.updatedAt))
                         EachSectionCardView(sectionType: .ideaSection, content: productDetailStore.product_detail.ideaSection)

@@ -56,7 +56,7 @@ struct ProductsListView: View {
                                 .foregroundColor(Color(red: 1, green: 0.905, blue: 1.0))
                                 .frame(width: 500, height:1200)
                                 VStack{
-                                    ProgressView("loding now")
+                                    ProgressView("now loding")
                                     Spacer()
                                 }
                             }
