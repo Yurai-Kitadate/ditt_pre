@@ -51,9 +51,17 @@ struct ProductsListView: View {
                             .shadow(color: .gray, radius: 3, x: 5, y: 5)
                             .frame(width:400, height: 0)
                         if productsStore.products.isEmpty {
-                            ProgressView("loading...")
+                            ZStack(alignment: .center){
+                            Rectangle()
+                                .foregroundColor(Color(red: 1, green: 0.905, blue: 1.0))
+                                .frame(width: 500, height:1200)
+                                VStack{
+                                    ProgressView("loding now")
+                                    Spacer()
+                                }
+                            }
                         } else {
-                            ForEach((0...2), id: \.self) { i in
+                            ForEach((0..<productsStore.products.count), id: \.self) { i in
                                 NavigationLink(destination:ProductDetailView(id: productsStore.products[i].id)){
                                     ProductCardView(product: productsStore.products[i])
                                 }

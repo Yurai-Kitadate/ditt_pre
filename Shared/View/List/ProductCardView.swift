@@ -11,8 +11,7 @@ struct ProductCardView: View {
                 
             VStack(alignment: .center){
                 URLImage(url:product.thumbnailUrl)
-                    .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
-                    .frame(width:350, height: 250)
+                    //.frame(width:350, height: 250)
                 Text(product.title).foregroundColor(.black)
                 Text("")
                 Text(product.introduction).foregroundColor(.gray).font(.custom("caption", size: 10)).multilineTextAlignment(.leading)

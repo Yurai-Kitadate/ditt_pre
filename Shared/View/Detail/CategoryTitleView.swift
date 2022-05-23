@@ -4,18 +4,18 @@ struct CategoryTitleView: View{
     var body:some View{
         if sectionType == .designSection{
             HStack(alignment: .top){
-                Image("idea")
+                Image("design")
                 VStack(alignment: .leading){
-                    Text("Design")
+                    Text("Design").foregroundColor(Color(red: 4.0/255, green: 220/225, blue: 90/255))
                     Text("デザイン")
                 }
             }
         }
         if sectionType == .technologySection{
             HStack{
-                Image("idea")
+                Image("tech")
                 VStack(alignment: .leading){
-                    Text("Technology")
+                    Text("Technology").foregroundColor(Color(red: 33.0/255, green: 149/225, blue: 255/255))
                     Text("技術")
                 }
             }
@@ -31,9 +31,9 @@ struct CategoryTitleView: View{
         }
         if sectionType == .teamSection{
             HStack{
-                Image("idea")
+                Image("team")
                 VStack(alignment: .leading){
-                    Text("Team")
+                    Text("Team").foregroundColor(Color(red: 242.0/255, green: 49.0/255, blue: 130.0/255))
                     Text("チーム")
                 }
             }

@@ -14,11 +14,17 @@ struct URLImage: View {
         if let imageData = self.imageDownloader.downloadData {
             let img = UIImage(data: imageData)
             return VStack {
-                Image(uiImage: img!).resizable()
+                Image(uiImage: img!)
+                    .resizable()
+                    .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
+                    .frame(width:350, height: 250)
             }
         } else {
             return VStack {
-                Image("no_image").resizable()
+                Image("no_image")
+                    .resizable()
+                    .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
+                    .frame(width:350, height: 250)
             }
         }
     }
