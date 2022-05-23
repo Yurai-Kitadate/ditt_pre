@@ -8,7 +8,7 @@
 import Foundation
 struct Product_Detail : Decodable,Identifiable{
     var id                : String
-    var thumbnailURL      : String
+    var thumbnailUrl      : String
     var title             : String
     var introduction      : String
     var ideaSection       : String
@@ -19,7 +19,7 @@ struct Product_Detail : Decodable,Identifiable{
     var updatedAt         : String
     private enum CodingKeys: String, CodingKey {
         case id
-        case thumbnailURL
+        case thumbnailUrl
         case title
         case introduction
         case ideaSection
