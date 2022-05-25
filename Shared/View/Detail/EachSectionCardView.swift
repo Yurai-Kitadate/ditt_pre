@@ -16,7 +16,7 @@ struct EachSectionCardView: View {
                 .fill(Color.white)
                 .cornerRadius(20)
                 .shadow(color: .gray, radius: 3, x: 5, y: 5)
-                .frame(width:375)
+                .frame(width:350)
             HStack{
                 VStack(alignment: .leading,spacing: 20){
                     CategoryTitleView(sectionType: sectionType)
@@ -26,11 +26,7 @@ struct EachSectionCardView: View {
                 }
                 Spacer()
             }
-            //                .background(Color.white)
-            //                .cornerRadius(20)
-            //                .shadow(color: .gray, radius: 3, x: 5, y: 5)
             .padding(30)
-            //.frame(width:350)
         }
     }
     

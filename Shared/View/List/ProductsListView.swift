@@ -52,9 +52,9 @@ struct ProductsListView: View {
                             .frame(width:500, height: 0)
                         if productsStore.products.isEmpty {
                             ZStack(alignment: .center){
-                            Rectangle()
-                                .foregroundColor(Color(red: 1, green: 0.905, blue: 1.0))
-                                .frame(width: 500, height:1200)
+                                Rectangle()
+                                    .foregroundColor(Color(red: 1, green: 0.905, blue: 1.0))
+                                    .frame(width: 500, height:1200)
                                 VStack{
                                     ProgressView("now loding")
                                     Spacer()
@@ -62,9 +62,19 @@ struct ProductsListView: View {
                             }
                         } else {
                             ForEach((0..<productsStore.products.count), id: \.self) { i in
-                                NavigationLink(destination:ProductDetailView(id: productsStore.products[i].id)){
+                                NavigationLink(destination: ProductDetailView(id: productsStore.products[i].id)) {
                                     ProductCardView(product: productsStore.products[i])
+                                        .contextMenu {
+                                            Button(action: {
+                                                UIPasteboard.general.string = "https://ditt.codephilia-inc.com/products/" + productsStore.products[i].id
+                                            }) {
+                                                Text("Copy")
+                                                Image(systemName: "figure.wave")
+                                            }
+                                        }
                                 }
+                                .buttonStyle(HighlightButtonStyle())
+                                
                             }
                         }
                     }.background(Color(red: 1, green: 0.905, blue: 1.0))
@@ -75,5 +85,11 @@ struct ProductsListView: View {
                 }
             }
         }
+    }
+}
+struct HighlightButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .opacity(configuration.isPressed ? 0.9 : 1.0)
     }
 }
