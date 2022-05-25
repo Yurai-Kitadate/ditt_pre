@@ -2,29 +2,24 @@ import Foundation
 import SwiftUI
 @MainActor
 class ProductDetailStore: ObservableObject {
-    //@Published var product_details :Product_Detail
     @Published private(set) var product_detail:Product_Detail = Product_Detail(
         id: "", thumbnailUrl: "", title: "", introduction: "", ideaSection: "", designSection: "", technologySection: "", teamSection: "", createdAt: "", updatedAt: "")
     func loadProduct(id:String) async {
         let url = URL(string: "https://ditt.codephilia-inc.com/api/products/" + id)!
-        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
-        urlRequest.allHTTPHeaderFields = [
-            "Accept": "application/vnd.github.v3+json"
-        ]
-        
         let (data, _) = try! await URLSession.shared.data(for: urlRequest)
         
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let value = try! decoder.decode(Product_Detail.self, from: data)
-        
-        product_detail = value
+        let d = JSONDecoder()
+        d.keyDecodingStrategy = .convertFromSnakeCase
+        product_detail = try! d.decode(Product_Detail.self, from: data)
     }
 }
 struct ProductDetailView:View{
     @StateObject private var productDetailStore = ProductDetailStore()
+//    init() {
+//        _productDetailStore = StateObject(wrappedValue: ProductDetailStore())
+//    }
     @State var image: UIImage?
     let id: String
     var body:some View{
