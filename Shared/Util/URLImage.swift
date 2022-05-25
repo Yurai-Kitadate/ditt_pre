@@ -16,18 +16,20 @@ struct URLImage: View {
             return VStack {
                 Image(uiImage: img!)
                     .resizable()
-                    .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
+                    .scaledToFill()
                     .frame(width:350, height: 250)
-                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
+                    //.aspectRatio(contentMode: .fill)
 
             }
         } else {
             return VStack {
                 Image("no_image")
                     .resizable()
-                    .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
+                    .scaledToFill()
                     .frame(width:350, height: 250)
-                    .aspectRatio(contentMode: .fit)
+                    .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
+                    //.aspectRatio(contentMode: .fill)
             }
         }
     }

@@ -116,6 +116,48 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E44DCBF283DCCB3000A1772 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1BD5E2822E11F004513A2 /* URLImage.swift */,
+				5EE1A7D628376E6800F1757F /* PartlyRoundedCornerView.swift */,
+				5EE1BD612822E147004513A2 /* ImageDownloder.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		5E44DCC0283DCCC8000A1772 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1BD11282263BE004513A2 /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		5E44DCC1283DCCD3000A1772 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1BD4F28227003004513A2 /* Datamodel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5E44DCC2283DCCE0000A1772 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1BD10282263BE004513A2 /* Ditt_preApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		5E44DCC3283DCCE8000A1772 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1BD12282263C0004513A2 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		5EE1A7E328389D3000F1757F /* Title */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,13 +199,12 @@
 		5EE1BD0F282263BE004513A2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5E44DCC2283DCCE0000A1772 /* App */,
 				5EE1BD5D282282D7004513A2 /* View */,
 				5EE1BD5328227539004513A2 /* Mocks */,
-				5EE1BD10282263BE004513A2 /* Ditt_preApp.swift */,
-				5EE1BD4F28227003004513A2 /* Datamodel.swift */,
-				5EE1BD5E2822E11F004513A2 /* URLImage.swift */,
-				5EE1BD612822E147004513A2 /* ImageDownloder.swift */,
-				5EE1BD12282263C0004513A2 /* Assets.xcassets */,
+				5E44DCC1283DCCD3000A1772 /* Model */,
+				5E44DCC3283DCCE8000A1772 /* Assets */,
+				5E44DCBF283DCCB3000A1772 /* Util */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -216,8 +257,7 @@
 		5EE1BD5D282282D7004513A2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				5EE1BD11282263BE004513A2 /* MainView.swift */,
-				5EE1A7D628376E6800F1757F /* PartlyRoundedCornerView.swift */,
+				5E44DCC0283DCCC8000A1772 /* Main */,
 				5EE1A7E328389D3000F1757F /* Title */,
 				5EE1A7E528389D5E00F1757F /* List */,
 				5EE1A7E628389D7F00F1757F /* Detail */,

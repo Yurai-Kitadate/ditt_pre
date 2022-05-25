@@ -14,9 +14,7 @@ struct MainView: View {
         UITabBar.appearance().unselectedItemTintColor = .gray
     }
     var body: some View {
-        
        ProductsListView()
-        
     }
 }
 

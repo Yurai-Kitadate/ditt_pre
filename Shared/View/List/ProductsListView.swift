@@ -2,23 +2,14 @@ import SwiftUI
 @MainActor
 class ProductsStore: ObservableObject {
     @Published private(set) var products = [Product]()
-    
     func loadProducts() async {
         let url = URL(string: "https://ditt.codephilia-inc.com/api/products")!
-        
         var urlRequest = URLRequest(url: url)
         urlRequest.httpMethod = "GET"
-        urlRequest.allHTTPHeaderFields = [
-            "Accept": "application/vnd.github.v3+json"
-        ]
-        
         let (data, _) = try! await URLSession.shared.data(for: urlRequest)
-        
-        let decoder = JSONDecoder()
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
-        let value = try! decoder.decode([Product].self, from: data)
-        
-        products = value
+        let d = JSONDecoder()
+        d.keyDecodingStrategy = .convertFromSnakeCase
+        products = try! d.decode([Product].self, from: data)
     }
 }
 struct ProductsListView: View {
@@ -64,14 +55,15 @@ struct ProductsListView: View {
                             ForEach((0..<productsStore.products.count), id: \.self) { i in
                                 NavigationLink(destination: ProductDetailView(id: productsStore.products[i].id)) {
                                     ProductCardView(product: productsStore.products[i])
-                                        .contextMenu {
-                                            Button(action: {
-                                                UIPasteboard.general.string = "https://ditt.codephilia-inc.com/products/" + productsStore.products[i].id
-                                            }) {
-                                                Text("Copy")
-                                                Image(systemName: "figure.wave")
-                                            }
-                                        }
+//                                        .contextMenu {
+//                                            Button(action: {
+//                                                UIPasteboard.general.string = "https://ditt.codephilia-inc.com/products/" + productsStore.products[i].id
+//                                            }) {
+//                                                Text("Copy")
+//                                                Image(systemName: "figure.wave")
+//                                            }
+//                                        }
+                                    //長押しの処理↑
                                 }
                                 .buttonStyle(HighlightButtonStyle())
                                 
