@@ -27,7 +27,6 @@ struct ProductDetailView:View{
     @StateObject private var productDetailStore = ProductDetailStore()
     @State var image: UIImage?
     let id: String
-    //let product : Product_Detail
     var body:some View{
         ZStack{
             Color(red: 1, green: 0.905, blue: 1.0)

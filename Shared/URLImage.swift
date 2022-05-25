@@ -17,7 +17,7 @@ struct URLImage: View {
                 Image(uiImage: img!)
                     .resizable()
                     .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
-                    .frame(width:375, height: 250)
+                    .frame(width:350, height: 250)
                     .aspectRatio(contentMode: .fit)
 
             }
@@ -26,7 +26,7 @@ struct URLImage: View {
                 Image("no_image")
                     .resizable()
                     .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
-                    .frame(width:375, height: 250)
+                    .frame(width:350, height: 250)
                     .aspectRatio(contentMode: .fit)
             }
         }
