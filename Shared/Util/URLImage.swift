@@ -18,9 +18,7 @@ struct URLImage: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width:350, height: 250)
-                    .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
-                    //.aspectRatio(contentMode: .fill)
-
+                    .modifier(CornerRadiusModifier(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner]))
             }
         } else {
             return VStack {
@@ -28,8 +26,7 @@ struct URLImage: View {
                     .resizable()
                     .scaledToFill()
                     .frame(width:350, height: 250)
-                    .cornerRadius(20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner])
-                    //.aspectRatio(contentMode: .fill)
+                    .modifier(CornerRadiusModifier(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner]))
             }
         }
     }
