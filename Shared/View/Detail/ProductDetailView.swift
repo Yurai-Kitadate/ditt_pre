@@ -17,9 +17,9 @@ class ProductDetailStore: ObservableObject {
 }
 struct ProductDetailView:View{
     @StateObject private var productDetailStore = ProductDetailStore()
-//    init() {
-//        _productDetailStore = StateObject(wrappedValue: ProductDetailStore())
-//    }
+    //    init() {
+    //        _productDetailStore = StateObject(wrappedValue: ProductDetailStore())
+    //    }
     @State var image: UIImage?
     let id: String
     var body:some View{
@@ -31,11 +31,33 @@ struct ProductDetailView:View{
                     if productDetailStore.product_detail.id == ""{
                         ProgressView("now loding")
                     }else{
-                        ProductCardView(product: Product(id: productDetailStore.product_detail.id, thumbnailUrl: productDetailStore.product_detail.thumbnailUrl, title: productDetailStore.product_detail.title, introduction: productDetailStore.product_detail.introduction, createdAt: productDetailStore.product_detail.createdAt, updatedAt:productDetailStore.product_detail.updatedAt))
-                        EachSectionCardView(sectionType: .ideaSection, content: productDetailStore.product_detail.ideaSection)
-                        EachSectionCardView(sectionType: .designSection, content: productDetailStore.product_detail.designSection)
-                        EachSectionCardView(sectionType: .technologySection, content: productDetailStore.product_detail.technologySection)
-                        EachSectionCardView(sectionType: .teamSection, content: productDetailStore.product_detail.teamSection)
+                        
+                        let product_details = productDetailStore.product_detail
+                        
+                        ProductCardView(product: Product(
+                            id          : product_details.id,
+                            thumbnailUrl: product_details.thumbnailUrl,
+                            title       : product_details.title,
+                            introduction:product_details.introduction,
+                            createdAt   : product_details.createdAt,
+                            updatedAt   :product_details.updatedAt
+                        ))
+                        EachSectionCardView(
+                            sectionType: .ideaSection,
+                            content: product_details.ideaSection
+                        )
+                        EachSectionCardView(
+                            sectionType: .designSection,
+                            content: product_details.designSection
+                        )
+                        EachSectionCardView(
+                            sectionType: .technologySection,
+                            content: product_details.technologySection
+                        )
+                        EachSectionCardView(
+                            sectionType: .teamSection,
+                            content: product_details.teamSection
+                        )
                     }
                 }
             }.task {
