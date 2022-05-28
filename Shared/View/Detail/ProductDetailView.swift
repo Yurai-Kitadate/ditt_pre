@@ -64,35 +64,68 @@ struct ProductDetailView:View{
                 .toolbar {
                     //toolbarの色を常に白に
                     ToolbarItemGroup(placement: .bottomBar) {
-                        Button("Introduction") {
-                            withAnimation (.default){
-                                reader.scrollTo(1,anchor: .top)
-                            }
-                        }
+//                        Button(action: {
+//                            withAnimation (.default){
+//                                reader.scrollTo(1,anchor: .top)
+//                            }
+//                        },label:  {
+//                            Image("intro")
+//                        })
+//
                         Spacer()
-                        Button("Idea") {
-                            withAnimation (.easeIn){
+                        
+                        Button(action: {
+                            withAnimation (.default){
                                 reader.scrollTo(2,anchor: .top)
                             }
-                        }
+                        },label:  {
+                            Image("idea")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                        })
+                        
                         Spacer()
-                        Button("Design") {
+                        
+                        Button(action: {
                             withAnimation (.default){
                                 reader.scrollTo(3,anchor: .top)
                             }
-                        }
+                        },label:  {
+                            Image("tech")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                        })
+
                         Spacer()
-                        Button("Technology") {
+                        
+                        Button(action: {
                             withAnimation (.default){
                                 reader.scrollTo(4,anchor: .top)
                             }
-                        }
+                        },label:  {
+                            Image("tech")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                        })
+                        
                         Spacer()
-                        Button("Team") {
+                        
+                        Button(action: {
                             withAnimation (.default){
                                 reader.scrollTo(5,anchor: .top)
                             }
-                        }
+                        },label:  {
+                            Image("team")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
+                        })
+                        
+                        Spacer()
+
                     }
                 }
             }
