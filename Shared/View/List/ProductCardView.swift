@@ -13,7 +13,7 @@ struct ProductCardView: View {
                     .frame(width:350, height: 250)
                 Text(product.title).foregroundColor(.black)
                 Text(product.introduction).foregroundColor(.gray).font(.custom("caption", size: 10)).multilineTextAlignment(.leading)
-                    .lineLimit(nil)
+                    .lineLimit(5)
                     .fixedSize(horizontal: false, vertical: false).frame(width:330)
                     .padding(10)
             }

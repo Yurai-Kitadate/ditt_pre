@@ -11,7 +11,9 @@ class ProductDetailStore: ObservableObject {
         
         let d = JSONDecoder()
         d.keyDecodingStrategy = .convertFromSnakeCase
-        product_detail = try! d.decode(Product_Detail.self, from: data)
+        DispatchQueue.main.async { [self] in
+            self.product_detail = try! d.decode(Product_Detail.self, from: data)
+        }
     }
 }
 struct ProductDetailView:View{
@@ -23,53 +25,75 @@ struct ProductDetailView:View{
         ZStack{
             myPink
                 .ignoresSafeArea()
-            ScrollView{
-                VStack(spacing: 20){
-                    if productDetailStore.product_detail.id == ""{
-                        ProgressView("now loding")
-                    }else{
-                        let product_details = productDetailStore.product_detail
-                        ProductCardView(product: Product(
-                            id          : product_details.id,
-                            thumbnailUrl: product_details.thumbnailUrl,
-                            title       : product_details.title,
-                            introduction:product_details.introduction,
-                            createdAt   : product_details.createdAt,
-                            updatedAt   :product_details.updatedAt
-                        )).id(1)
-                        EachSectionCardView(
-                            sectionType: .ideaSection,
-                            content: product_details.ideaSection
-                        ).id(2)
-                        EachSectionCardView(
-                            sectionType: .designSection,
-                            content: product_details.designSection
-                        ).id(3)
-                        EachSectionCardView(
-                            sectionType: .technologySection,
-                            content: product_details.technologySection
-                        ).id(4)
-                        EachSectionCardView(
-                            sectionType: .teamSection,
-                            content: product_details.teamSection
-                        ).id(5)
+            ScrollViewReader { reader in
+                ScrollView{
+                    VStack(spacing: 20){
+                        if productDetailStore.product_detail.id == ""{
+                            ProgressView("now loding")
+                        }else{
+                            let product_details = productDetailStore.product_detail
+                            ProductCardView(product: Product(
+                                id          : product_details.id,
+                                thumbnailUrl: product_details.thumbnailUrl,
+                                title       : product_details.title,
+                                introduction:product_details.introduction,
+                                createdAt   : product_details.createdAt,
+                                updatedAt   :product_details.updatedAt
+                            )).id(1)
+                            EachSectionCardView(
+                                sectionType: .ideaSection,
+                                content: product_details.ideaSection
+                            ).id(2)
+                            EachSectionCardView(
+                                sectionType: .designSection,
+                                content: product_details.designSection
+                            ).id(3)
+                            EachSectionCardView(
+                                sectionType: .technologySection,
+                                content: product_details.technologySection
+                            ).id(4)
+                            EachSectionCardView(
+                                sectionType: .teamSection,
+                                content: product_details.teamSection
+                            ).id(5)
+                        }
                     }
+                }.task {
+                    await productDetailStore.loadProduct(id: id)
                 }
-            }.task {
-                await productDetailStore.loadProduct(id: id)
-            }
-            .toolbar {
-                //toolbarの色を常に白に
-                ToolbarItemGroup(placement: .bottomBar) {
-                    Button("Introduction") {}
-                    Spacer()
-                    Button("Idea") {}
-                    Spacer()
-                    Button("Design") {}
-                    Spacer()
-                    Button("Technology") {}
-                    Spacer()
-                    Button("Team") {}
+                .toolbar {
+                    //toolbarの色を常に白に
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        Button("Introduction") {
+                            withAnimation (.default){
+                                reader.scrollTo(1,anchor: .leading)
+                            }
+                        }
+                        Spacer()
+                        Button("Idea") {
+                            withAnimation (.easeIn){
+                                reader.scrollTo(2,anchor: .leading)
+                            }
+                        }
+                        Spacer()
+                        Button("Design") {
+                            withAnimation (.default){
+                                reader.scrollTo(3,anchor: .leading)
+                            }
+                        }
+                        Spacer()
+                        Button("Technology") {
+                            withAnimation (.default){
+                                reader.scrollTo(4,anchor: .leading)
+                            }
+                        }
+                        Spacer()
+                        Button("Team") {
+                            withAnimation (.default){
+                                reader.scrollTo(5,anchor: .leading)
+                            }
+                        }
+                    }
                 }
             }
             .navigationTitle(title)
