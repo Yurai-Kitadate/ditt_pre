@@ -66,31 +66,31 @@ struct ProductDetailView:View{
                     ToolbarItemGroup(placement: .bottomBar) {
                         Button("Introduction") {
                             withAnimation (.default){
-                                reader.scrollTo(1,anchor: .leading)
+                                reader.scrollTo(1,anchor: .top)
                             }
                         }
                         Spacer()
                         Button("Idea") {
                             withAnimation (.easeIn){
-                                reader.scrollTo(2,anchor: .leading)
+                                reader.scrollTo(2,anchor: .top)
                             }
                         }
                         Spacer()
                         Button("Design") {
                             withAnimation (.default){
-                                reader.scrollTo(3,anchor: .leading)
+                                reader.scrollTo(3,anchor: .top)
                             }
                         }
                         Spacer()
                         Button("Technology") {
                             withAnimation (.default){
-                                reader.scrollTo(4,anchor: .leading)
+                                reader.scrollTo(4,anchor: .top)
                             }
                         }
                         Spacer()
                         Button("Team") {
                             withAnimation (.default){
-                                reader.scrollTo(5,anchor: .leading)
+                                reader.scrollTo(5,anchor: .top)
                             }
                         }
                     }

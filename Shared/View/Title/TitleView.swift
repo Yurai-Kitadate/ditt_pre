@@ -7,7 +7,7 @@ struct TitleView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200, height: 200)
-                NavigationLink(destination:MainView()){
+                NavigationLink(destination:ProductsListView()){
                     Text("Start")
                 }
             }

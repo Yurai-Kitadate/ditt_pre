@@ -53,10 +53,15 @@ struct ProductsListView: View {
                             }
                         } else {
                             ForEach((0..<productsStore.products.count), id: \.self) { i in
-                                NavigationLink(destination: ProductDetailView(id: productsStore.products[i].id,title: productsStore.products[i].title)) {
+                                NavigationLink(destination:ProductDetailView(
+                                    id: productsStore.products[i].id,title: productsStore.products[i].title
+                                )) {
+                                    
                                     ProductCardView(product: productsStore.products[i])
+                                    
                                 }
                                 .buttonStyle(HighlightButtonStyle())
+                                //viewがタップで透けないように
                                 
                             }
                         }
