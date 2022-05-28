@@ -64,14 +64,17 @@ struct ProductDetailView:View{
                 .toolbar {
                     //toolbarの色を常に白に
                     ToolbarItemGroup(placement: .bottomBar) {
-//                        Button(action: {
-//                            withAnimation (.default){
-//                                reader.scrollTo(1,anchor: .top)
-//                            }
-//                        },label:  {
-//                            Image("intro")
-//                        })
-//
+                        
+                        Button(action: {
+                            withAnimation (.default){
+                                reader.scrollTo(1,anchor: .top)
+                            }
+                        },label:  {
+                            Text("概要")
+                                .foregroundColor(.black)
+                                .underline(true,color: .gray)
+                        })
+
                         Spacer()
                         
                         Button(action: {
@@ -79,10 +82,9 @@ struct ProductDetailView:View{
                                 reader.scrollTo(2,anchor: .top)
                             }
                         },label:  {
-                            Image("idea")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
+                            Text("アイデア")
+                                .foregroundColor(.black)
+                                .underline(true,color: .yellow)
                         })
                         
                         Spacer()
@@ -92,10 +94,9 @@ struct ProductDetailView:View{
                                 reader.scrollTo(3,anchor: .top)
                             }
                         },label:  {
-                            Image("tech")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
+                            Text("デザイン")
+                                .foregroundColor(.black)
+                                .underline(true,color: .green)
                         })
 
                         Spacer()
@@ -105,10 +106,9 @@ struct ProductDetailView:View{
                                 reader.scrollTo(4,anchor: .top)
                             }
                         },label:  {
-                            Image("tech")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
+                            Text("技術")
+                                .foregroundColor(.black)
+                                .underline(true,color: .blue)
                         })
                         
                         Spacer()
@@ -118,10 +118,9 @@ struct ProductDetailView:View{
                                 reader.scrollTo(5,anchor: .top)
                             }
                         },label:  {
-                            Image("team")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 40, height: 40)
+                            Text("チーム")
+                                .foregroundColor(.black)
+                                .underline(true,color: .red)
                         })
                         
                         Spacer()
