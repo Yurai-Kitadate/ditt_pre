@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E93BB0128410FBC00DD3FF4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E93BB0028410FBC00DD3FF4 /* Color.swift */; };
+		5E93BB0228410FBC00DD3FF4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E93BB0028410FBC00DD3FF4 /* Color.swift */; };
 		5EC24AFB283611D9005DBD12 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC24AFA283611D9005DBD12 /* ProductCardView.swift */; };
 		5EC24AFC283611D9005DBD12 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC24AFA283611D9005DBD12 /* ProductCardView.swift */; };
 		5EE1A7D728376E6800F1757F /* CornerRadiusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EE1A7D628376E6800F1757F /* CornerRadiusView.swift */; };
@@ -59,6 +61,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E93BB0028410FBC00DD3FF4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5EC24AFA283611D9005DBD12 /* ProductCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; tabWidth = 4; };
 		5EE1A7D628376E6800F1757F /* CornerRadiusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusView.swift; sourceTree = "<group>"; };
 		5EE1A7D9283774B200F1757F /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
@@ -120,7 +123,6 @@
 			isa = PBXGroup;
 			children = (
 				5EE1BD5E2822E11F004513A2 /* URLImage.swift */,
-				5EE1A7D628376E6800F1757F /* CornerRadiusView.swift */,
 				5EE1BD612822E147004513A2 /* ImageDownloder.swift */,
 			);
 			path = Util;
@@ -156,6 +158,22 @@
 				5EE1BD12282263C0004513A2 /* Assets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		5E93BAFF28410F6700DD3FF4 /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				5E93BB0028410FBC00DD3FF4 /* Color.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		5E93BB07284200B700DD3FF4 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				5EE1A7D628376E6800F1757F /* CornerRadiusView.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 		5EE1A7E328389D3000F1757F /* Title */ = {
@@ -199,6 +217,8 @@
 		5EE1BD0F282263BE004513A2 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				5E93BB07284200B700DD3FF4 /* Modifier */,
+				5E93BAFF28410F6700DD3FF4 /* Color */,
 				5E44DCC2283DCCE0000A1772 /* App */,
 				5EE1BD5D282282D7004513A2 /* View */,
 				5EE1BD5328227539004513A2 /* Mocks */,
@@ -432,6 +452,7 @@
 				5EE1A7E02838279400F1757F /* EachSectionCardView.swift in Sources */,
 				5EE1BD3A282263C0004513A2 /* MainView.swift in Sources */,
 				5EE1BD5028227003004513A2 /* Datamodel.swift in Sources */,
+				5E93BB0128410FBC00DD3FF4 /* Color.swift in Sources */,
 				5EC24AFB283611D9005DBD12 /* ProductCardView.swift in Sources */,
 				5EE1A7DA283774B200F1757F /* TitleView.swift in Sources */,
 				5EE1BD4D282269B9004513A2 /* ProductsListView.swift in Sources */,
@@ -452,6 +473,7 @@
 				5EE1A7E12838279400F1757F /* EachSectionCardView.swift in Sources */,
 				5EE1BD3B282263C0004513A2 /* MainView.swift in Sources */,
 				5EE1BD5128227003004513A2 /* Datamodel.swift in Sources */,
+				5E93BB0228410FBC00DD3FF4 /* Color.swift in Sources */,
 				5EC24AFC283611D9005DBD12 /* ProductCardView.swift in Sources */,
 				5EE1A7DB283774B200F1757F /* TitleView.swift in Sources */,
 				5EE1BD4E282269B9004513A2 /* ProductsListView.swift in Sources */,

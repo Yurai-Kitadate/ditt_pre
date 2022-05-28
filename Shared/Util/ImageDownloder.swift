@@ -1,10 +1,3 @@
-//
-//  ImageDownloder.swift
-//  ditt_pre
-//
-//  Created by yurai on 2022/05/05.
-//
-
 import Foundation
 
 class ImageDownloader : ObservableObject {

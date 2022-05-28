@@ -1,6 +1,5 @@
 import Foundation
 import SwiftUI
-@MainActor
 class ProductDetailStore: ObservableObject {
     @Published private(set) var product_detail:Product_Detail = Product_Detail(
         id: "", thumbnailUrl: "", title: "", introduction: "", ideaSection: "", designSection: "", technologySection: "", teamSection: "", createdAt: "", updatedAt: "")
@@ -17,23 +16,19 @@ class ProductDetailStore: ObservableObject {
 }
 struct ProductDetailView:View{
     @StateObject private var productDetailStore = ProductDetailStore()
-    //    init() {
-    //        _productDetailStore = StateObject(wrappedValue: ProductDetailStore())
-    //    }
     @State var image: UIImage?
     let id: String
+    let title: String
     var body:some View{
         ZStack{
-            Color(red: 1, green: 0.905, blue: 1.0)
+            myPink
                 .ignoresSafeArea()
             ScrollView{
                 VStack(spacing: 20){
                     if productDetailStore.product_detail.id == ""{
                         ProgressView("now loding")
                     }else{
-                        
                         let product_details = productDetailStore.product_detail
-                        
                         ProductCardView(product: Product(
                             id          : product_details.id,
                             thumbnailUrl: product_details.thumbnailUrl,
@@ -41,28 +36,43 @@ struct ProductDetailView:View{
                             introduction:product_details.introduction,
                             createdAt   : product_details.createdAt,
                             updatedAt   :product_details.updatedAt
-                        ))
+                        )).id(1)
                         EachSectionCardView(
                             sectionType: .ideaSection,
                             content: product_details.ideaSection
-                        )
+                        ).id(2)
                         EachSectionCardView(
                             sectionType: .designSection,
                             content: product_details.designSection
-                        )
+                        ).id(3)
                         EachSectionCardView(
                             sectionType: .technologySection,
                             content: product_details.technologySection
-                        )
+                        ).id(4)
                         EachSectionCardView(
                             sectionType: .teamSection,
                             content: product_details.teamSection
-                        )
+                        ).id(5)
                     }
                 }
             }.task {
                 await productDetailStore.loadProduct(id: id)
             }
+            .toolbar {
+                //toolbarの色を常に白に
+                ToolbarItemGroup(placement: .bottomBar) {
+                    Button("Introduction") {}
+                    Spacer()
+                    Button("Idea") {}
+                    Spacer()
+                    Button("Design") {}
+                    Spacer()
+                    Button("Technology") {}
+                    Spacer()
+                    Button("Team") {}
+                }
+            }
+            .navigationTitle(title)
         }
     }
 }

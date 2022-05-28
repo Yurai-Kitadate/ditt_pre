@@ -44,7 +44,7 @@ struct ProductsListView: View {
                         if productsStore.products.isEmpty {
                             ZStack(alignment: .center){
                                 Rectangle()
-                                    .foregroundColor(Color(red: 1, green: 0.905, blue: 1.0))
+                                    .foregroundColor(myPink)
                                     .frame(width: 500, height:1200)
                                 VStack{
                                     ProgressView("now loding")
@@ -53,14 +53,14 @@ struct ProductsListView: View {
                             }
                         } else {
                             ForEach((0..<productsStore.products.count), id: \.self) { i in
-                                NavigationLink(destination: ProductDetailView(id: productsStore.products[i].id)) {
+                                NavigationLink(destination: ProductDetailView(id: productsStore.products[i].id,title: productsStore.products[i].title)) {
                                     ProductCardView(product: productsStore.products[i])
                                 }
                                 .buttonStyle(HighlightButtonStyle())
                                 
                             }
                         }
-                    }.background(Color(red: 1, green: 0.905, blue: 1.0))
+                    }.background(myPink)
                         .navigationBarBackButtonHidden(true)
                         .navigationBarHidden(true)
                 }.task {
