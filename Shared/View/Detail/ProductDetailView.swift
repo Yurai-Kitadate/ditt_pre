@@ -17,22 +17,23 @@ class ProductDetailStore: ObservableObject {
     }
 }
 struct ProductDetailView:View{
+    let screen: CGRect = UIScreen.main.bounds
     @StateObject private var productDetailStore = ProductDetailStore()
     @State var image: UIImage?
     let id: String
     let title: String
     var body:some View{
         ZStack{
-            myPink
+            myGray
                 .ignoresSafeArea()
             ScrollViewReader { reader in
                 ScrollView{
-                    VStack(spacing: 20){
+                    VStack(alignment: .center,spacing: 20){
                         if productDetailStore.product_detail.id == ""{
                             ProgressView("now loding")
                         }else{
                             let product_details = productDetailStore.product_detail
-                            ProductCardView(product: Product(
+                            ProductCardFullView(product: Product(
                                 id          : product_details.id,
                                 thumbnailUrl: product_details.thumbnailUrl,
                                 title       : product_details.title,
@@ -61,7 +62,7 @@ struct ProductDetailView:View{
                 }.task {
                     await productDetailStore.loadProduct(id: id)
                 }
-                .toolbar {
+                .toolbar{
                     //toolbarの色を常に白に
                     ToolbarItemGroup(placement: .bottomBar) {
                         

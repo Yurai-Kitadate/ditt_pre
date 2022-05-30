@@ -1,5 +1,5 @@
 import SwiftUI
-struct ProductCardView: View {
+struct ProductCardFullView: View {
     let screen: CGRect = UIScreen.main.bounds
     let product : Product
     var body: some View {
@@ -30,8 +30,8 @@ struct ProductCardView: View {
                         .shadow(color: .gray, radius: 3, x: 5, y: 5)
                         .frame(width:(screen.width - screen.width / 1.1)/2, height:0)
                     Text(product.introduction).foregroundColor(.gray).font(.custom("caption", size: 10)).multilineTextAlignment(.leading)
-                        .lineLimit(5)
-                        .fixedSize(horizontal: false, vertical: false).frame(width:screen.width / 1.2)
+                        .lineLimit(100)
+                        //.fixedSize(horizontal: false, vertical: false).frame(width:screen.width / 1.2)
                     Spacer()
                 }
                 Spacer()
@@ -39,5 +39,6 @@ struct ProductCardView: View {
         }
     }
 }
+
 
 

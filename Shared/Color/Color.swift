@@ -7,4 +7,4 @@
 
 import Foundation
 import SwiftUI
-let myPink : Color = Color(red: 1, green: 0.905, blue: 1.0)
+let myGray : Color = Color(red: 231/255, green: 241/255, blue: 1.0)

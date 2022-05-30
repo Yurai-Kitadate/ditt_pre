@@ -1,3 +1,4 @@
+import Foundation
 import SwiftUI
 @MainActor
 class ProductsStore: ObservableObject {
@@ -13,6 +14,7 @@ class ProductsStore: ObservableObject {
     }
 }
 struct ProductsListView: View {
+    let screen: CGRect = UIScreen.main.bounds
     @StateObject var productsStore: ProductsStore
     
     init() {
@@ -20,32 +22,25 @@ struct ProductsListView: View {
     }
     var body: some View {
         ZStack{
+            myGray.ignoresSafeArea()
             VStack(){
-                VStack {
-                    Rectangle()
-                        .foregroundColor(.blue)
-                        .shadow(color: .gray, radius: 3, x: 5, y: 5)
-                        .frame(width:500, height: 0)
-                }
-                HStack{
-                    Image("Logo1")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 70, height: 70)
-                    Spacer()
-                }
-                .background(.white)
                 ScrollView(showsIndicators:false){
+                    VStack {
+                        Rectangle()
+                            .foregroundColor(.blue)
+                            .shadow(color: .gray, radius: 3, x: 5, y: 5)
+                            .frame(width:screen.width, height: 0)
+                    }
                     VStack(alignment: .center,spacing: 20) {
                         Rectangle()
                             .foregroundColor(.blue)
                             .shadow(color: .gray, radius: 3, x: 5, y: 5)
-                            .frame(width:500, height: 0)
+                            .frame(width:screen.width, height: 0)
                         if productsStore.products.isEmpty {
                             ZStack(alignment: .center){
                                 Rectangle()
-                                    .foregroundColor(myPink)
-                                    .frame(width: 500, height:1200)
+                                    .foregroundColor(myGray)
+                                    .frame(width: screen.width, height:1200)
                                 VStack{
                                     ProgressView("now loding")
                                     Spacer()
@@ -65,7 +60,7 @@ struct ProductsListView: View {
                                 
                             }
                         }
-                    }.background(myPink)
+                    }.background(myGray)
                         .navigationBarBackButtonHidden(true)
                         .navigationBarHidden(true)
                 }.task {
