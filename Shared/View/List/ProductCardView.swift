@@ -31,7 +31,8 @@ struct ProductCardView: View {
                         .frame(width:(screen.width - screen.width / 1.1)/2, height:0)
                     Text(product.introduction).foregroundColor(.gray).font(.custom("caption", size: 10)).multilineTextAlignment(.leading)
                         .lineLimit(5)
-                        .fixedSize(horizontal: false, vertical: false).frame(width:screen.width / 1.2)
+                        .fixedSize(horizontal: false, vertical: false)
+                        .frame(width:screen.width / 1.15)
                     Spacer()
                 }
                 Spacer()
