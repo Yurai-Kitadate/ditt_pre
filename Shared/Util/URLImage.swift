@@ -17,16 +17,14 @@ struct URLImage: View {
                 Image(uiImage: img!)
                     .resizable()
                     .scaledToFill()
-                    .frame(width:screen.width / 1.1, height: 250)
-                    .modifier(CornerRadiusModifier(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner]))
+                    .frame(width:screen.width, height: 300)
             }
         } else {
             return VStack {
                 Image("no_image")
                     .resizable()
                     .scaledToFill()
-                    .frame(width:screen.width / 1.1, height: 250)
-                    .modifier(CornerRadiusModifier(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner]))
+                    .frame(width:screen.width, height: 300)
             }
         }
     }
