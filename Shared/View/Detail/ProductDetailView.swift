@@ -1,6 +1,5 @@
 import Foundation
 import SwiftUI
-@MainActor
 class ProductDetailStore: ObservableObject {
     @Published private(set) var product_detail:Product_Detail = Product_Detail(
         id: "", thumbnailUrl: "", title: "", introduction: "", ideaSection: "", designSection: "", technologySection: "", teamSection: "", createdAt: "", updatedAt: "")
@@ -12,35 +11,125 @@ class ProductDetailStore: ObservableObject {
         
         let d = JSONDecoder()
         d.keyDecodingStrategy = .convertFromSnakeCase
-        product_detail = try! d.decode(Product_Detail.self, from: data)
+        DispatchQueue.main.async { [self] in
+            self.product_detail = try! d.decode(Product_Detail.self, from: data)
+        }
     }
 }
 struct ProductDetailView:View{
+    let screen: CGRect = UIScreen.main.bounds
     @StateObject private var productDetailStore = ProductDetailStore()
-//    init() {
-//        _productDetailStore = StateObject(wrappedValue: ProductDetailStore())
-//    }
     @State var image: UIImage?
     let id: String
+    let title: String
     var body:some View{
         ZStack{
-            Color(red: 1, green: 0.905, blue: 1.0)
+            myGray
                 .ignoresSafeArea()
-            ScrollView{
-                VStack(spacing: 20){
-                    if productDetailStore.product_detail.id == ""{
-                        ProgressView("now loding")
-                    }else{
-                        ProductCardView(product: Product(id: productDetailStore.product_detail.id, thumbnailUrl: productDetailStore.product_detail.thumbnailUrl, title: productDetailStore.product_detail.title, introduction: productDetailStore.product_detail.introduction, createdAt: productDetailStore.product_detail.createdAt, updatedAt:productDetailStore.product_detail.updatedAt))
-                        EachSectionCardView(sectionType: .ideaSection, content: productDetailStore.product_detail.ideaSection)
-                        EachSectionCardView(sectionType: .designSection, content: productDetailStore.product_detail.designSection)
-                        EachSectionCardView(sectionType: .technologySection, content: productDetailStore.product_detail.technologySection)
-                        EachSectionCardView(sectionType: .teamSection, content: productDetailStore.product_detail.teamSection)
+            ScrollViewReader { reader in
+                ScrollView{
+                    VStack(alignment: .center,spacing: 20){
+                        if productDetailStore.product_detail.id == ""{
+                            ProgressView("now loding")
+                        }else{
+                            let product_details = productDetailStore.product_detail
+                            ProductCardFullView(product: Product(
+                                id          : product_details.id,
+                                thumbnailUrl: product_details.thumbnailUrl,
+                                title       : product_details.title,
+                                introduction:product_details.introduction,
+                                createdAt   : product_details.createdAt,
+                                updatedAt   :product_details.updatedAt
+                            )).id(1)
+                            EachSectionCardView(
+                                sectionType: .ideaSection,
+                                content: product_details.ideaSection
+                            ).id(2)
+                            EachSectionCardView(
+                                sectionType: .designSection,
+                                content: product_details.designSection
+                            ).id(3)
+                            EachSectionCardView(
+                                sectionType: .technologySection,
+                                content: product_details.technologySection
+                            ).id(4)
+                            EachSectionCardView(
+                                sectionType: .teamSection,
+                                content: product_details.teamSection
+                            ).id(5)
+                        }
+                    }
+                }.task {
+                    await productDetailStore.loadProduct(id: id)
+                }
+                .toolbar{
+                    //toolbarの色を常に白に
+                    ToolbarItemGroup(placement: .bottomBar) {
+                        
+                        Button(action: {
+                            withAnimation (.default){
+                                reader.scrollTo(1,anchor: .top)
+                            }
+                        },label:  {
+                            Text("概要")
+                                .foregroundColor(.black)
+                                .underline(true,color: .gray)
+                        })
+
+                        Spacer()
+                        
+                        Button(action: {
+                            withAnimation (.default){
+                                reader.scrollTo(2,anchor: .top)
+                            }
+                        },label:  {
+                            Text("アイデア")
+                                .foregroundColor(.black)
+                                .underline(true,color: .yellow)
+                        })
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            withAnimation (.default){
+                                reader.scrollTo(3,anchor: .top)
+                            }
+                        },label:  {
+                            Text("デザイン")
+                                .foregroundColor(.black)
+                                .underline(true,color: .green)
+                        })
+
+                        Spacer()
+                        
+                        Button(action: {
+                            withAnimation (.default){
+                                reader.scrollTo(4,anchor: .top)
+                            }
+                        },label:  {
+                            Text("技術")
+                                .foregroundColor(.black)
+                                .underline(true,color: .blue)
+                        })
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            withAnimation (.default){
+                                reader.scrollTo(5,anchor: .top)
+                            }
+                        },label:  {
+                            Text("チーム")
+                                .foregroundColor(.black)
+                                .underline(true,color: .red)
+                        })
+                        
+                        Spacer()
+
                     }
                 }
-            }.task {
-                await productDetailStore.loadProduct(id: id)
             }
+            .navigationTitle(title)
         }
     }
 }

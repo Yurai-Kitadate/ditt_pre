@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 struct EachSectionCardView: View {
+    let screen: CGRect = UIScreen.main.bounds
     let sectionType:CardType
     let content:String
     var body: some View {
@@ -16,7 +17,7 @@ struct EachSectionCardView: View {
                 .fill(Color.white)
                 .cornerRadius(20)
                 .shadow(color: .gray, radius: 3, x: 5, y: 5)
-                .frame(width:350)
+                .frame(width:screen.width / 1.1)
             HStack{
                 VStack(alignment: .leading,spacing: 20){
                     CategoryTitleView(sectionType: sectionType)

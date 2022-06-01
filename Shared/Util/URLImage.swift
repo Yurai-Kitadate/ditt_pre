@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct URLImage: View {
-
+    let screen: CGRect = UIScreen.main.bounds
     let url: String
     @ObservedObject private var imageDownloader = ImageDownloader()
 
@@ -17,7 +17,7 @@ struct URLImage: View {
                 Image(uiImage: img!)
                     .resizable()
                     .scaledToFill()
-                    .frame(width:350, height: 250)
+                    .frame(width:screen.width / 1.1, height: 250)
                     .modifier(CornerRadiusModifier(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner]))
             }
         } else {
@@ -25,7 +25,7 @@ struct URLImage: View {
                 Image("no_image")
                     .resizable()
                     .scaledToFill()
-                    .frame(width:350, height: 250)
+                    .frame(width:screen.width / 1.1, height: 250)
                     .modifier(CornerRadiusModifier(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner,.layerMaxXMinYCorner]))
             }
         }

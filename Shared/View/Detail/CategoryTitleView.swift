@@ -1,6 +1,7 @@
 import SwiftUI
 struct CategoryTitleView: View{
     let sectionType:CardType
+    //let screen: CGSize = UIScreen.main.bounds
     var body:some View{
         if sectionType == .designSection{
             HStack(alignment: .top){
