@@ -1,9 +1,9 @@
 import SwiftUI
 struct CategoryTitleView: View{
     let sectionType:CardType
-    //let screen: CGSize = UIScreen.main.bounds
     var body:some View{
-        if sectionType == .designSection{
+        switch sectionType {
+        case .designSection:
             HStack(alignment: .top){
                 Image("design")
                 VStack(alignment: .leading){
@@ -11,8 +11,7 @@ struct CategoryTitleView: View{
                     Text("デザイン")
                 }
             }
-        }
-        if sectionType == .technologySection{
+        case  .technologySection:
             HStack{
                 Image("tech")
                 VStack(alignment: .leading){
@@ -20,8 +19,7 @@ struct CategoryTitleView: View{
                     Text("技術")
                 }
             }
-        }
-        if sectionType == .ideaSection{
+        case .ideaSection:
             HStack{
                 Image("idea")
                 VStack(alignment: .leading){
@@ -29,8 +27,7 @@ struct CategoryTitleView: View{
                     Text("アイデア")
                 }
             }
-        }
-        if sectionType == .teamSection{
+        default:
             HStack{
                 Image("team")
                 VStack(alignment: .leading){
