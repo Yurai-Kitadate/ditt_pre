@@ -13,9 +13,18 @@ extension Product {
         title: "ditt!",
         introduction:
         """
-        Open Hack U 2021 vol.3で開発したプロダクト。
+        Open Hack U 2021 vol.3で開jioefovnioviojvoinoni fniorvoinonivinvrnioer
         
+        jrvoevijorijoijvijovijvpjvpojvpvpojvpipjivorojdewojepopdeowkedwkekopdepkedwkpodwekowekopedwpokedwpkoekoewokdepokedokdeokekowdpk発したプロダクト。
         
+        ds
+        d
+        d
+        d
+        d
+        d
+        d
+        d
         """,
         createdAt:  "",
         updatedAt:  ""
@@ -45,7 +54,9 @@ extension Product_Detail {
         title: "ditt!",
         introduction:
         """
-        Open Hack U 2021 vol.3で開発したプロダクト。
+        Open Hack U 2021 vol.3で開発したプロダクト。dmiow[ommdimdscmicdskmcdsmkcdkmcdkdfkmpfewmpk[efwmkpfwemfepm[fep[mfem[pofempfempef[wmpfewafmepwafwema[pfemwap[fewmpafaemwpfaewmlpfeapwlmlfewmfelwmpfewlmpemplfemlfepwamfpm[lfaemplfeawmpefwampfewapmlfeaplmpfaemlfepamlefwmlfaemlpaefpmlefmlpfawp[mlefwmpf
+        
+        fepkefafaekop[aefwpokafepkoefw
         
         
         """,

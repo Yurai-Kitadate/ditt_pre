@@ -15,9 +15,22 @@ struct ProductsListView: View {
                         Spacer()
                     }
                     URLImage(url: mock[i].thumbnailUrl)
+                    Text(mock[i].introduction)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(5)
+                        .fixedSize(horizontal: false, vertical: false)
                 }
             }
-        }.navigationBarBackButtonHidden(true)
+        }
+        .navigationBarBackButtonHidden(true)
+        //.navigationBarTitle(Text("Instagram"), displayMode: .inline)
+        .navigationBarItems(
+            leading: Image("Logo1")
+                .resizable()
+                .frame(width: 440/7, height: 160/7)
+            )
+                .padding(.bottom, 10)
+        
     }
 }
 struct HighlightButtonStyle: ButtonStyle {
