@@ -3,33 +3,27 @@ import SwiftUI
 struct ProductsListView: View {
     let screen: CGRect = UIScreen.main.bounds
     let mock : [Product] = [.mock1,.mock2,.mock3]
+    let mock_detail : [Product_Detail] = [.mock1,.mock2,.mock3]
     var body: some View {
         ScrollView{
             VStack{
                 ForEach((0..<mock.count), id: \.self) { i in
-                    HStack{
-                        Image("tech")
-                            .resizable()
-                            .frame(width: screen.width/15, height: screen.width/15)
-                        Text(mock[i].title)
-                        Spacer()
+                    NavigationLink(destination: Text(mock[i].id)){
+                        ProductBlockView(product: mock[i])
                     }
-                    URLImage(url: mock[i].thumbnailUrl)
-                    Text(mock[i].introduction)
-                        .multilineTextAlignment(.leading)
-                        .lineLimit(5)
-                        .fixedSize(horizontal: false, vertical: false)
+                    .buttonStyle(HighlightButtonStyle())
                 }
+                
             }
+            Divider()
         }
         .navigationBarBackButtonHidden(true)
-        //.navigationBarTitle(Text("Instagram"), displayMode: .inline)
         .navigationBarItems(
             leading: Image("Logo1")
                 .resizable()
                 .frame(width: 440/7, height: 160/7)
-            )
-                .padding(.bottom, 10)
+        )
+        //.padding(.bottom, 10)
         
     }
 }

@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 struct ProductDetailView:View{
+    let product_detail: Product_Detail
     var body:some View {
-        Text("a")
+        Text(product_detail.id)
     }
 }
