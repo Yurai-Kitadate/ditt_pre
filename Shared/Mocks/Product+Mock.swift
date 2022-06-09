@@ -28,7 +28,8 @@ extension Product {
         """,
         createdAt:  "",
         updatedAt:  "",
-        user: "codephilia"
+        user: "codephilia",
+        imageName: "yabe"
         
     )
     static let mock2 = Product(
@@ -38,7 +39,8 @@ extension Product {
         introduction: "気になる子と両思いかも！？",
         createdAt: "",
         updatedAt: "",
-        user: "yuurai"
+        user: "yuurai",
+        imageName: "shikimori"
     )
     static let mock3 = Product(
         id: "3",
@@ -47,7 +49,8 @@ extension Product {
         introduction: "豚でもないウマさ!!",
         createdAt: "",
         updatedAt: "",
-        user: "yk"
+        user: "yk",
+        imageName: "akabeko"
     )
     
 }

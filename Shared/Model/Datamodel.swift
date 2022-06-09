@@ -38,6 +38,7 @@ struct Product : Decodable,Identifiable{
     var createdAt         : String
     var updatedAt         : String
     var user              : String
+    var imageName         : String
     private enum CodingKeys: String, CodingKey {
         case id
         case thumbnailUrl
@@ -46,6 +47,7 @@ struct Product : Decodable,Identifiable{
         case createdAt
         case updatedAt
         case user
+        case imageName
     }
 }
 

@@ -15,7 +15,6 @@ struct ProductsListView: View {
                 }
                 
             }
-            Divider()
         }
         .navigationBarBackButtonHidden(true)
         .navigationBarItems(
@@ -23,13 +22,16 @@ struct ProductsListView: View {
                 .resizable()
                 .frame(width: 440/7, height: 160/7)
         )
-        //.padding(.bottom, 10)
-        
     }
 }
 struct HighlightButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .opacity(configuration.isPressed ? 0.9 : 1.0)
+    }
+}
+struct ProductsListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProductsListView()
     }
 }

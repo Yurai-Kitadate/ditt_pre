@@ -13,3 +13,8 @@ struct ProductDetailView:View{
         Text(product_detail.id)
     }
 }
+struct ProductDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProductDetailView(product_detail: .mock1)
+    }
+}
